@@ -1,6 +1,6 @@
 import { describe, it, expect } from "vitest";
 import request from "supertest";
-import app from "../src/./index"; // Ensure your app is exported in index.ts
+import app from "../src/index";
 
 describe("GET /", () => {
   it("should return Hello, world!", async () => {
