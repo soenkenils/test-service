@@ -1,20 +1,20 @@
-# GitHub Copilot
+# GitHub Copilot Tipps & Tricks
 
 ## General Copilot Usage
 
-### Don't let Copilot fly the plane 
+### Don't Let Copilot Fly the Plane
 
 You are the real pilot. Copilot is meant to be an assistant.
 Let it generate code suggestions, not the complete code base!
 
-### Use Copilot's tools
+### Use Copilot's Tools
 
-Don't use comments as prompts!
-**Inline Chat (Cmd+I)** for suggestions
-**Ghost Text** for suggestions
-**Chat Window** for more general questions
+Don't use code comments as prompts!
+Use **Inline Chat (Cmd+I)** for suggestions.
+Use **Ghost Text** for suggestions.
+Use the **Chat Window** for more general questions.
 
-### Slash Commands
+### Use Slash Commands
 
 Don't recreate existing prompts. Use predefined slash commands.
 
@@ -51,7 +51,7 @@ Three options: Ask, Edit, Agent
 * Edit: Same answer but Copilot creates files on their own.
 * Agent: Is going to act a little bit like you would.
 
-LLMs have training cutoff dates! Important: Provide the model with the context that it needs to be successful.
+**Hint:** LLMs have training cutoff dates! Important: Provide the model with the context that it needs to be successful.
 
 ```shell
 #fetch <url-to-documentation> Follow the instructions exactly
@@ -61,5 +61,11 @@ LLMs have training cutoff dates! Important: Provide the model with the context t
 
 MCP = Model Context Protocol
 
+How to discover MCPs:
+
+* Take a look at https://mcp.so/
+* Search with https://www.perplexity.ai/
+
 ## Custom Instructions
 
+`.github/copilot-instructions.md`
