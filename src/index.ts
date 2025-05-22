@@ -5,10 +5,6 @@ const GREETINGS = ["Hi!", "Hello!", "Ahoi!", "Moin!"];
 const app: Application = express();
 const port = 3000;
 
-app.get("/", (req, res) => {
-    res.send("Hello, world!");
-});
-
 app.get("/greeting", (_req: Request, res: Response) => {
   const randomGreeting = GREETINGS[Math.floor(Math.random() * GREETINGS.length)];
   res.json({
