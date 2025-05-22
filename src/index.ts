@@ -1,10 +1,19 @@
-import express, { Application } from "express";
+import express, { Application, Request, Response } from "express";
+
+const GREETINGS = ["Hi!", "Hello!", "Ahoi!", "Moin!"];
 
 const app: Application = express();
 const port = 3000;
 
 app.get("/", (req, res) => {
     res.send("Hello, world!");
+});
+
+app.get("/greeting", (_req: Request, res: Response) => {
+  const randomGreeting = GREETINGS[Math.floor(Math.random() * GREETINGS.length)];
+  res.json({
+    greeting: randomGreeting
+  });
 });
 
 if (require.main === module) {
