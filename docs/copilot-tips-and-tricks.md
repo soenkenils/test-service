@@ -194,12 +194,13 @@ Optimize this user data processing function using Redis caching to improve perfo
 
 **Example:**
 ```markdown
-We use Bazel for Java dependencies, not Maven.
-JavaScript code should use double quotes and tabs for indentation.
-All React components must be functional with TypeScript.
-Include unit tests for all business logic functions.
-Use our custom Error classes for error handling.
-Follow REST API conventions with proper HTTP status codes.
+Always conform to the coding styles defined in docs/styleguide.md.
+
+Use @terminal when answering questions about Git.
+
+Answer all questions in the style of a friendly colleague, using informal language.
+
+Answer all questions in less than 1000 characters, and words of no more than 12 characters.
 ```
 
 ### Shared Prompts (`.github/prompts/`)
