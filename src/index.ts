@@ -8,6 +8,7 @@ import express, {
 } from "express";
 import rateLimit from "express-rate-limit";
 import helmet from "helmet";
+import logger from "./utils/logger";
 
 interface GreetingResponse {
   greeting: string;
@@ -31,7 +32,7 @@ const GREETINGS: readonly string[] = [
   "What's up!",
   "Yo!",
   "Salutations!",
-  "Guten Tag!",
+  "Guten Tag!"
 ];
 const port: number = process.env.PORT
   ? Number.parseInt(process.env.PORT, 10)
@@ -80,7 +81,7 @@ class NotFoundError extends Error {
 }
 // Global Error Handler
 const errorHandler: ErrorRequestHandler = (err, _req, res, _next) => {
-  console.error(err.stack);
+  logger.error("Request error", { error: err, stack: err.stack });
 
   if (err instanceof ValidationError) {
     res.status(400).json({
@@ -113,10 +114,10 @@ app.use(errorHandler);
 if (require.main === module) {
   try {
     app.listen(port, () => {
-      console.log(`Server is running at http://localhost:${port}`);
+      logger.info(`Server is running at http://localhost:${port}`);
     });
   } catch (error) {
-    console.error("Failed to start server:", error);
+    logger.error("Failed to start server:", { error });
     process.exit(1);
   }
 }

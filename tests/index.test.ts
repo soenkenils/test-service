@@ -17,7 +17,26 @@ describe("GET /greeting", () => {
       .expect(200);
 
     expect(response.body).toHaveProperty("greeting");
-    expect(["Hi!", "Hello!", "Ahoi!", "Moin!"]).toContain(
+    expect([
+      "Hi!",
+      "Hello!",
+      "Ahoi!",
+      "Moin!",
+      "Greetings!",
+      "Hey there!",
+      "Welcome!",
+      "Howdy!",
+      "Hola!",
+      "Bonjour!",
+      "Ciao!",
+      "G'day mate!",
+      "Aloha!",
+      "Namaste!",
+      "What's up!",
+      "Yo!",
+      "Salutations!",
+      "Guten Tag!"
+    ]).toContain(
       response.body.greeting,
     );
   });
