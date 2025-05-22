@@ -220,10 +220,10 @@ Follow REST API conventions with proper HTTP status codes.
 **File Structure:**
 ```
 .github/prompts/
-├── code-review.md
-├── api-design.md
-├── security-audit.md
-└── documentation.md
+├── code-review.prompt.md
+├── api-design.prompt.md
+├── security-audit.prompt.md
+└── documentation.prompt.md
 ```
 
 **Example Prompt File:**
@@ -251,6 +251,8 @@ Analyze this API endpoint for security vulnerabilities:
 - Framework: {{framework}}
 - Authentication method: {{auth_method}}
 ```
+
+ Shared prompts must use the `.prompt.md` extension, not just `.md`. This distinguishes them from regular markdown files and enables VS Code to recognize them as Copilot prompt templates that can be invoked with slash commands like `/code-review`.
 
 ### Main Differences
 
