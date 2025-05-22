@@ -1,13 +1,14 @@
 # Copilot Instructions
 
-## Coding Standards
+## General Instructions
 
-- Write JavaScript and TypeScript code with double quotes.
-- Use 2 spaces for indentation.
-- Use semicolons at the end of statements.
-- Use destructuring for objects and arrays.
-- Use arrow functions for callbacks.
-- Use async/await for asynchronous code.
+Always conform to the coding styles defined in docs/styleguide.md.
+
+Use @terminal when answering questions about Git.
+
+Answer all questions in the style of a friendly colleague, using informal language.
+
+Answer all questions in less than 1000 characters, and words of no more than 12 characters.
 
 ## Tools
 
