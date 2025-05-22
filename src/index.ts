@@ -4,6 +4,7 @@ import express, {
   type Request,
   type Response,
   type NextFunction,
+  type ErrorRequestHandler,
 } from "express";
 import rateLimit from "express-rate-limit";
 import helmet from "helmet";
@@ -44,11 +45,51 @@ app.get(
   },
 );
 
+// Custom error types
+class ValidationError extends Error {
+  constructor(message: string) {
+    super(message);
+    this.name = "ValidationError";
+  }
+}
+
+class NotFoundError extends Error {
+  constructor(message: string) {
+    super(message);
+    this.name = "NotFoundError";
+  }
+}
 // Global Error Handler
-app.use((err: Error, _req: Request, res: Response, _next: NextFunction) => {
+const errorHandler: ErrorRequestHandler = (err, _req, res, _next) => {
   console.error(err.stack);
-  res.status(500).json({ error: "Internal Server Error" });
-});
+
+  if (err instanceof ValidationError) {
+    res.status(400).json({
+      error: "Validation Error",
+      message: err.message,
+    });
+    return;
+  }
+
+  if (err instanceof NotFoundError) {
+    res.status(404).json({
+      error: "Not Found",
+      message: err.message,
+    });
+    return;
+  }
+
+  // Handle unexpected errors
+  res.status(500).json({
+    error: "Internal Server Error",
+    message:
+      process.env.NODE_ENV === "production"
+        ? "An unexpected error occurred"
+        : err.message,
+  });
+};
+
+app.use(errorHandler);
 
 if (require.main === module) {
   try {
