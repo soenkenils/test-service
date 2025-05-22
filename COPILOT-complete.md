@@ -28,32 +28,13 @@ Too few tokens and the LLM may lack context, too many and the LLM can be overwhe
 ### Limitations
 
 LLMs rely on patterns and probabilities they were trained on.
-Models are never perfect. They sometimes provide incorrect answers, also called hallucinations.
+Models are never perfect. They sometimes provide incorrect answers, also called *hallucinations*.
 
 ### Prompts
 
 You can work with LLMs' power and limitations by combining everything into a prompt. A prompt gives a model context via tokens.
 
 **Prompt Engineering** = term for crafting prompts.
-
-## Copilot Versions & Features
-
-### Individual vs. Business vs. Enterprise
-
-- **Copilot Individual**: Basic code suggestions, chat in supported IDEs
-- **Copilot Business**: All Individual features plus organization management, security features
-- **Copilot Enterprise**: All Business features plus custom models, advanced security, enterprise integrations
-
-### Feature Availability Matrix
-
-| Feature | Individual | Business | Enterprise |
-|---------|------------|----------|------------|
-| Code completion | ✅ | ✅ | ✅ |
-| Chat interface | ✅ | ✅ | ✅ |
-| Custom instructions | ✅ | ✅ | ✅ |
-| Organization policies | ❌ | ✅ | ✅ |
-| Custom models | ❌ | ❌ | ✅ |
-| Advanced security | ❌ | ✅ | ✅ |
 
 ## Core Concepts
 
