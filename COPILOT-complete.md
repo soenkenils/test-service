@@ -36,6 +36,13 @@ You can work with LLMs' power and limitations by combining everything into a pro
 
 **Prompt Engineering** = term for crafting prompts.
 
+**Guidelines:**
+
+* Use tokens to provide context
+* Keep prompts clear, concise, and precise
+* Break prompts into smaller chunks
+* Be specific about your requirements
+
 ## Core Concepts
 
 ### Code Completion vs. Chat
@@ -125,7 +132,7 @@ Refactor #selection to use TypeScript interfaces based on the patterns in #UserS
 
 ### The 3S Principle
 
-3S = Simple, Specific, Short
+3S = Simple, Specific, Short.
 
 #### Simple
 
