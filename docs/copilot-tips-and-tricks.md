@@ -1,4 +1,4 @@
-# GitHub Copilot Tips & Tricks - Complete Guide
+# GitHub Copilot Tips & Tricks
 
 ## Table of Contents
 1. [Understanding LLMs](#understanding-llms)
