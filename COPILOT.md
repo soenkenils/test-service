@@ -22,7 +22,7 @@ Models are never perfect. They sometimes provide incorrect answers, also called 
 
 You can work with LLMs' power and limitations by combining everything into a prompt. A prompt gives a model context via tokens.
 
-**Prompt Engineering** = term for crafting prompts.
+So, **Prompt Engineering** is just a term for crafting prompts.
 
 ## General Copilot Usage
 
@@ -225,6 +225,7 @@ This approach reduces errors and ensures all aspects are covered.
 Ask Copilot to take on a specific role or perspective.
 
 **Examples:**
+
 ```
 Act as a senior security engineer and review this authentication code for vulnerabilities.
 
