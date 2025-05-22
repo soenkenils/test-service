@@ -8,8 +8,9 @@
 5. [Advanced Features](#advanced-features)
 6. [Prompting Strategies](#prompting-strategies)
 7. [Language & Framework Specific Tips](#language--framework-specific-tips)
-8. [Privacy & Security](#privacy--security)
-9. [Troubleshooting](#troubleshooting)
+8. [IDE Support & Compatibility](#ide-support--compatibility)
+9. [Privacy & Security](#privacy--security)
+10. [Troubleshooting](#troubleshooting)
 
 ## Understanding LLMs
 
@@ -416,6 +417,146 @@ public class UserController {
 "Create a React component using hooks that manages form state with validation"
 "Generate a custom hook for API data fetching with loading and error states"
 ```
+
+## IDE Support & Compatibility
+
+### Feature Support by IDE
+
+Different IDEs have varying levels of support for GitHub Copilot's advanced features. Here's a comprehensive breakdown:
+
+| Feature | VS Code | IntelliJ IDEA | Visual Studio | Other IDEs |
+|---------|---------|---------------|---------------|------------|
+| **Code Completion** | ✅ Full | ✅ Full | ✅ Full | ✅ Most |
+| **Chat Interface** | ✅ Full | ✅ Full | ✅ Full | ⚠️ Limited |
+| **Custom Instructions** | ✅ Full | ✅ Supported | ✅ Supported | ❌ Not available |
+| **Shared Prompts (.prompt.md)** | ✅ Full | ❌ Not supported | ❌ Not supported | ❌ Not supported |
+| **Agent Mode** | ✅ Full (Preview) | ❌ Not available | ❌ Not available | ❌ Not available |
+| **Slash Commands** | ✅ Full | ✅ Basic | ✅ Full | ⚠️ Limited |
+| **Chat Participants** | ✅ @workspace | ✅ @project | ✅ @workspace | ❌ Varies |
+| **File References** | ✅ #file syntax | ✅ Manual attach | ✅ #file syntax | ⚠️ Limited |
+| **MCP Integration** | ✅ Full | ❌ Not available | ❌ Not available | ❌ Not available |
+
+### VS Code (Most Feature-Complete)
+
+**Unique Features:**
+- Shared prompts with `.prompt.md` files
+- Agent mode (preview)
+- Full MCP server integration
+- Advanced chat participants (@workspace, @vscode)
+- Comprehensive slash command library
+
+**Best For:**
+- Teams wanting to use shared prompt templates
+- Advanced AI-assisted development workflows
+- Experimental feature access
+
+### IntelliJ IDEA & JetBrains IDEs
+
+**Supported Features:**
+- Basic code completion and chat
+- Custom instructions (`.github/copilot-instructions.md`)
+- @project chat participant (equivalent to @workspace)
+- Manual file attachment to chat
+
+**Limitations:**
+- No shared prompts (`.prompt.md` files)
+- No agent mode
+- Limited slash command support
+- No MCP integration
+
+**Workarounds for IntelliJ Users:**
+
+1. **Replace Shared Prompts:**
+   ```markdown
+   # Create a personal prompts folder
+   .idea/prompts/
+   ├── code-review-checklist.md
+   ├── api-security-audit.md
+   └── testing-guidelines.md
+   
+   # Copy-paste content as needed
+   ```
+
+2. **Use Custom Instructions Effectively:**
+   ```markdown
+   # .github/copilot-instructions.md
+   When reviewing code, always check for:
+   - Security vulnerabilities
+   - Performance implications
+   - Test coverage
+   - Documentation completeness
+   
+   Our tech stack: Spring Boot, React, PostgreSQL
+   Always use our established patterns in the /patterns directory.
+   ```
+
+3. **Manual Context Management:**
+   - Keep relevant files open
+   - Use @project for workspace context
+   - Drag-and-drop files into chat
+   - Reference specific classes/methods in prompts
+
+**Example IntelliJ Workflow:**
+```
+# Instead of /code-review prompt in VS Code:
+@project Review this class for security issues and performance problems. 
+Consider our Spring Boot patterns and check against our coding standards 
+in the /docs/standards.md file.
+```
+
+### Visual Studio
+
+**Supported Features:**
+- Full code completion and chat
+- Custom instructions support
+- @workspace chat participant
+- File reference syntax (#file)
+- Comprehensive slash commands
+
+**Limitations:**
+- No shared prompts
+- No agent mode
+- Limited MCP integration
+
+### Other IDEs (Vim, Neovim, etc.)
+
+**Basic Support:**
+- Code completion (varies by implementation)
+- Limited or no chat interface
+- No advanced features
+
+**Recommendations:**
+- Use vim-copilot or similar plugins for basic functionality
+- Consider using GitHub Copilot CLI for chat features
+- Supplement with web-based Copilot Chat
+
+### Migration Strategies
+
+**From VS Code to IntelliJ:**
+1. Convert `.prompt.md` files to documentation
+2. Consolidate common patterns into custom instructions
+3. Create personal prompt library in `.idea/` folder
+4. Train team on manual context management
+
+**From IntelliJ to VS Code:**
+1. Install Copilot Chat extension
+2. Create `.github/prompts/` folder
+3. Convert personal prompts to `.prompt.md` format
+4. Set up MCP servers if needed
+
+### Future Compatibility
+
+**Expected Developments:**
+- Shared prompts may come to other IDEs
+- Agent mode expansion to IntelliJ/Visual Studio
+- Improved MCP support across platforms
+- Standardization of chat participants
+
+**Current Recommendation:**
+- **VS Code**: Best for teams wanting cutting-edge features
+- **IntelliJ**: Solid for basic usage with custom instructions
+- **Visual Studio**: Good middle ground for .NET developers
+- **Others**: Supplement with CLI tools and web chat
 
 ## Privacy & Security
 
