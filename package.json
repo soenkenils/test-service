@@ -5,7 +5,10 @@
   "main": "index.js",
   "scripts": {
     "test": "vitest",
-    "start": "tsx src/index.ts"
+    "start": "tsx src/index.ts",
+    "format": "biome format --write src/ tests/",
+    "lint": "biome lint src/ tests/",
+    "check": "biome check --write src/ tests/"
   },
   "keywords": [],
   "author": "",

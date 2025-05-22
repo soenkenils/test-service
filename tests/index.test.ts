@@ -1,5 +1,5 @@
-import { describe, it, expect } from "vitest";
 import request from "supertest";
+import { describe, expect, it } from "vitest";
 import app from "../src/index";
 
 describe("GET /unknown", () => {
@@ -17,7 +17,8 @@ describe("GET /greeting", () => {
       .expect(200);
 
     expect(response.body).toHaveProperty("greeting");
-    expect(["Hi!", "Hello!", "Ahoi!", "Moin!"]).toContain(response.body.greeting);
+    expect(["Hi!", "Hello!", "Ahoi!", "Moin!"]).toContain(
+      response.body.greeting,
+    );
   });
 });
-
