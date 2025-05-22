@@ -13,7 +13,26 @@ interface GreetingResponse {
   greeting: string;
 }
 
-const GREETINGS: readonly string[] = ["Hi!", "Hello!", "Ahoi!", "Moin!"];
+const GREETINGS: readonly string[] = [
+  "Hi!",
+  "Hello!",
+  "Ahoi!",
+  "Moin!",
+  "Greetings!",
+  "Hey there!",
+  "Welcome!",
+  "Howdy!",
+  "Hola!",
+  "Bonjour!",
+  "Ciao!",
+  "G'day mate!",
+  "Aloha!",
+  "Namaste!",
+  "What's up!",
+  "Yo!",
+  "Salutations!",
+  "Guten Tag!",
+];
 const port: number = process.env.PORT
   ? Number.parseInt(process.env.PORT, 10)
   : 3000;
